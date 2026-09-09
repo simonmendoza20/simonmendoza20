@@ -12,7 +12,7 @@
 
 Soy **Simón Mendoza Aravena**, sociólogo chileno orientado al análisis de datos, la investigación aplicada y el desarrollo de soluciones basadas en información. Trabajo con datos cuantitativos y cualitativos y complemento mi formación en ciencias sociales con herramientas de programación, aprendizaje automático y procesamiento de datos.
 
-Me interesa participar en proyectos donde los datos permitan comprender problemas, construir evidencia y desarrollar soluciones reproducibles y bien documentadas.
+Mi búsqueda profesional se orienta a proyectos donde los datos permitan comprender problemas, construir evidencia y desarrollar soluciones reproducibles y bien documentadas.
 
 ### Perfil profesional
 
@@ -20,6 +20,29 @@ Me interesa participar en proyectos donde los datos permitan comprender problema
 - **Formación:** Sociología y formación de posgrado en Sociología.
 - **Áreas de interés:** análisis de datos, investigación aplicada, automatización, machine learning, deep learning y Big Data.
 - **Herramientas utilizadas en los proyectos del portafolio:** Python, R, pandas, scikit-learn, Keras/TensorFlow y PySpark MLlib.
+
+## Continuidad con el desafío anterior de Portafolio virtual
+
+Este repositorio ejecuta la planificación desarrollada previamente para el **Portafolio virtual**.
+
+### Repositorio seleccionado y razones
+
+Se mantiene **GitHub** como repositorio porque permite reunir código, documentación y evidencias en un mismo lugar; conservar historial de cambios; documentar cada proyecto mediante README; decidir qué contenido es público o privado; y enlazar demostraciones o resultados externos.
+
+| Característica de GitHub | Aplicación en este portafolio |
+|---|---|
+| Repositorios y control de versiones | Organiza proyectos y conserva cambios. |
+| README y documentación | Explica objetivo, datos, método, resultados y limitaciones. |
+| Enlaces directos | Permite revisar cada trabajo desde una portada común. |
+| Visibilidad pública/privada | Ayuda a separar evidencia publicable de información sensible. |
+
+### Referencia utilizada en la planificación
+
+Como referencia se utilizó el portafolio de **Brittany Chiang** ([GitHub](https://github.com/bchiang7) · [sitio](https://brittanychiang.com/)). De ese ejemplo se conservaron dos ideas: una propuesta profesional comprensible desde el inicio y una navegación simple por secciones. Para adaptarlo a mi perfil, el portafolio pone más énfasis en metodología, datos, métricas, reproducibilidad y limitaciones de cada proyecto, evitando que la presentación se concentre solo en estética de desarrollo web.
+
+### Mejoras aplicadas
+
+La prueba seleccionada en la planificación anterior fue **Reconocimiento de imágenes con redes neuronales convolutivas**. Para incorporarla al portafolio se aplicaron las mejoras previstas: ficha inicial con objetivo y tecnologías, semilla fija, separación entrenamiento/validación/prueba, comparación entre modelo base y modelo optimizado, resultados antes/después, código directamente revisable y una sección de alcance y limitaciones.
 
 ## Proyectos seleccionados
 
@@ -29,13 +52,13 @@ Me interesa participar en proyectos donde los datos permitan comprender problema
 
 La versión optimizada incorpora una segunda capa convolutiva, **Dropout** y **EarlyStopping**. En la evaluación realizada para la prueba, el accuracy de test aumentó de **96,67 % a 97,50 %**, junto con una reducción aproximada de **42,86 % del loss**.
 
-➡️ [Ver proyecto y código](./proyectos/cnn-digitos/)
+➡️ [Ver proyecto, documentación y código](./proyectos/cnn-digitos/)
 
 ### 2. Modelo predictivo con Apache Spark MLlib
 
 Proyecto de clasificación binaria implementado con **PySpark MLlib**. El flujo utiliza `Pipeline`, imputación de variables numéricas, `StringIndexer`, `VectorAssembler` y `RandomForestClassifier`. La entrega documenta también las limitaciones de trabajar con una etiqueta sintética y diferencia expresamente un ejercicio pedagógico de un modelo listo para producción.
 
-➡️ [Ver proyecto y código](./proyectos/spark-mllib/)
+➡️ [Ver proyecto, documentación y código](./proyectos/spark-mllib/)
 
 ### 3. Datos COVID-19
 
@@ -43,19 +66,15 @@ Repositorio público de trabajo con datos que contiene notebooks, estructura de 
 
 ➡️ [Ver repositorio Datos-COVID19](https://github.com/simonmendoza20/Datos-COVID19)
 
-## Criterios aplicados al portafolio
-
-Este portafolio desarrolla la planificación realizada previamente y utiliza **GitHub** porque permite organizar código y documentación, mantener historial de cambios, presentar proyectos mediante archivos README y compartir evidencia de forma verificable.
-
-Se aplicaron las siguientes mejoras y buenas prácticas:
+## Buenas prácticas aplicadas
 
 1. **Seleccionar antes que acumular:** se muestran proyectos concretos y comprensibles, no una lista extensa sin contexto.
 2. **Explicar problema, método y resultado:** cada proyecto indica qué se hizo, con qué herramientas y qué resultado se obtuvo.
-3. **Facilitar la reproducción:** el código incluye semillas, dependencias, estructura de datos e instrucciones mínimas de ejecución cuando corresponde.
-4. **Mostrar proceso y mejora:** se comparan versiones de los modelos y se explican decisiones, limitaciones y posibles mejoras.
-5. **Mantener navegación simple:** presentación, habilidades, proyectos y contacto pueden identificarse rápidamente.
+3. **Documentar para reproducir:** se incorporan semillas, dependencias, estructura de datos e instrucciones mínimas de ejecución cuando corresponde.
+4. **Mostrar proceso y reflexión:** se explican decisiones, comparación de versiones, limitaciones y posibles mejoras.
+5. **Mantener una presentación consistente:** los trabajos siguen una estructura similar y una navegación directa.
 6. **Cuidar privacidad y ética:** no se publican credenciales, datos personales de terceros ni información restringida.
-7. **Verificar enlaces y archivos:** los proyectos seleccionados se enlazan directamente desde esta portada.
+7. **Actualizar y verificar enlaces:** los proyectos seleccionados se enlazan directamente desde esta portada.
 
 ## Contacto y perfiles externos
 
@@ -67,4 +86,4 @@ Se aplicaron las siguientes mejoras y buenas prácticas:
 
 ### Portafolio académico — Desafío Latam
 
-Este repositorio reúne trabajos desarrollados durante la formación y aplica la planificación, criterios de documentación y mejoras definidos en el desafío previo de **Portafolio virtual**.
+Repositorio preparado para la prueba **Desarrollo de portafolio de un producto digital**, reuniendo la planificación previa, el perfil profesional y trabajos desarrollados durante la formación.
