@@ -8,6 +8,8 @@
   <strong>Análisis de datos · Investigación aplicada · Machine Learning · Big Data</strong>
 </p>
 
+> **Revisión docente:** [guía de entrega y correspondencia con la rúbrica](./ENTREGA.md) · [planificación del desafío anterior](./evidencias/planificacion-portafolio-anterior.md)
+
 ## Sobre mí
 
 Soy **Simón Mendoza Aravena**, sociólogo chileno orientado al análisis de datos, la investigación aplicada y el desarrollo de soluciones basadas en información. Trabajo con datos cuantitativos y cualitativos y complemento mi formación en ciencias sociales con herramientas de programación, aprendizaje automático y procesamiento de datos.
