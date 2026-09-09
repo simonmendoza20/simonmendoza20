@@ -38,7 +38,7 @@ Se mantiene **GitHub** como repositorio porque permite reunir código, documenta
 
 ### Referencia utilizada en la planificación
 
-Como referencia se utilizó el portafolio de **Brittany Chiang** ([GitHub](https://github.com/bchiang7) · [sitio](https://brittanychiang.com/)). De ese ejemplo se conservaron dos ideas: una propuesta profesional comprensible desde el inicio y una navegación simple por secciones. Para adaptarlo a mi perfil, el portafolio pone más énfasis en metodología, datos, métricas, reproducibilidad y limitaciones de cada proyecto, evitando que la presentación se concentre solo en estética de desarrollo web.
+Como referencia se utilizó el portafolio de **Brittany Chiang** ([GitHub](https://github.com/bchiang7) · [sitio](https://brittanychiang.com/)). De ese ejemplo se conservaron dos ideas: una propuesta profesional comprensible desde el inicio y una navegación simple por secciones. Para adaptarlo a mi perfil, el portafolio pone más énfasis en metodología, datos, métricas, reproducibilidad y limitaciones de cada proyecto.
 
 ### Mejoras aplicadas
 
@@ -48,9 +48,9 @@ La prueba seleccionada en la planificación anterior fue **Reconocimiento de im�
 
 ### 1. Reconocimiento de dígitos con una red neuronal convolutiva (CNN)
 
-**Proyecto destacado del portafolio.** Implementación de una CNN para clasificar dígitos del 0 al 9 a partir de imágenes de 8 × 8 píxeles. El trabajo incluye preparación de datos, normalización, separación entre entrenamiento/validación/prueba, modelo base, optimización, regularización, curvas de aprendizaje y matriz de confusión.
+**Proyecto destacado y prueba seleccionada para el portafolio.** Implementación de una CNN para clasificar dígitos del 0 al 9 a partir de imágenes de 8 × 8 píxeles. El trabajo incluye preparación de datos, normalización, separación entre entrenamiento/validación/prueba, modelo base, optimización, regularización, curvas de aprendizaje y matriz de confusión.
 
-La versión optimizada incorpora una segunda capa convolutiva, **Dropout** y **EarlyStopping**. En la evaluación realizada para la prueba, el accuracy de test aumentó de **96,67 % a 97,50 %**, junto con una reducción aproximada de **42,86 % del loss**.
+La versión final incorpora una segunda capa convolutiva, **Dropout** y **EarlyStopping**. En la evaluación de referencia, el modelo base obtuvo **96,67 %** de accuracy con loss **0,1277**, mientras que la versión optimizada alcanzó **98,89 %** con loss **0,0463**. El modelo final clasificó correctamente **356 de 360 imágenes** del conjunto de prueba.
 
 ➡️ [Ver proyecto, documentación y código](./proyectos/cnn-digitos/)
 
@@ -75,6 +75,17 @@ Repositorio público de trabajo con datos que contiene notebooks, estructura de 
 5. **Mantener una presentación consistente:** los trabajos siguen una estructura similar y una navegación directa.
 6. **Cuidar privacidad y ética:** no se publican credenciales, datos personales de terceros ni información restringida.
 7. **Actualizar y verificar enlaces:** los proyectos seleccionados se enlazan directamente desde esta portada.
+
+## Verificación de la prueba final
+
+| Requerimiento | Evidencia en este repositorio |
+|---|---|
+| Reunir lo realizado anteriormente e incorporar mejoras | Secciones de continuidad, razones de elección de GitHub, referencia utilizada, buenas prácticas y mejoras aplicadas. |
+| Perfil con nombre real | Simón Mendoza Aravena, visible al inicio. |
+| Fotografía o avatar | Avatar visible en la cabecera. |
+| Información sobre el estudiante | Formación, intereses, búsqueda profesional y herramientas. |
+| Enlaces a otros perfiles/plataformas | GitHub y perfil académico externo. |
+| Al menos un trabajo correctamente cargado | Proyecto CNN completo con README, código y dependencias; además se incluyen Spark MLlib y Datos-COVID19. |
 
 ## Contacto y perfiles externos
 
