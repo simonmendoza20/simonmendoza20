@@ -3,42 +3,29 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>ARS Global · Resultados 2026</title>
+<title>ARS Global · Repositorio 2026</title>
 <style>
-:root{
-  --ars:#0aa7a4;--ars-dark:#073b3b;--ars-blue:#2e5ba7;--ars-orange:#ef9a2f;
-  --bg:#f4f7f6;--card:#fff;--line:#dce7e5;--ink:#103536;--muted:#728484;
-}
-*{box-sizing:border-box}html,body{margin:0;height:100%;font-family:Inter,Segoe UI,Arial,sans-serif;color:var(--ink);background:var(--bg)}
-body{overflow:hidden}
-.app{height:100vh;display:grid;grid-template-columns:270px 1fr}
-aside{background:linear-gradient(180deg,var(--ars-dark),#052f30);color:white;padding:22px 16px;display:flex;flex-direction:column}
-.brand{padding:4px 10px 22px;border-bottom:1px solid #ffffff20}
-.brand strong{font-size:29px;letter-spacing:-.8px}.brand strong span{color:#2cc9c5}.brand small{display:block;letter-spacing:4px;color:#b8cfce;margin-top:5px}
-.label{font-size:11px;letter-spacing:2.2px;color:#a7c1c0;margin:22px 10px 10px;text-transform:uppercase}
-.org{padding:11px 12px;border-radius:12px;margin:3px 0;color:#deebea;cursor:pointer;border:1px solid transparent}
-.org:hover{background:#ffffff10}.org.active{background:white;color:#113b3b;font-weight:800}
-.folder{padding:11px 12px;border-radius:12px;background:#ffffff10;margin-top:16px;font-weight:800}
-.files{margin-top:6px}.file{padding:10px 12px;border-radius:10px;color:#deebea;cursor:pointer}.file.active,.file:hover{background:#ffffff10}
-.foot{margin-top:auto;border-top:1px solid #ffffff20;padding:15px 10px 0;font-size:10px;line-height:1.6;color:#9eb9b7}
-main{min-width:0;display:flex;flex-direction:column;height:100vh}
-.top{background:white;border-bottom:1px solid var(--line);padding:16px 22px 13px;display:flex;justify-content:space-between;align-items:flex-start;gap:18px}
-.crumb{font-size:11px;color:#80908f;margin-bottom:6px}.crumb b{color:var(--ars)}
-h1{font-size:24px;margin:0;letter-spacing:-.4px}.sub{font-size:11px;color:var(--muted);margin-top:5px}
-.actions{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
-.btn{border:1px solid var(--line);background:#fff;color:var(--ink);padding:10px 13px;border-radius:10px;font-weight:800;font-size:11px;cursor:pointer;text-decoration:none}
-.btn.primary{background:var(--ars-dark);color:white;border-color:var(--ars-dark)}
-.toolbar{background:white;border-bottom:1px solid var(--line);padding:10px 22px;display:grid;grid-template-columns:1fr auto auto;gap:8px;align-items:center}
-.input{width:100%;border:1px solid var(--line);border-radius:10px;padding:10px 12px;font-size:12px;outline:none}.input:focus{border-color:#8bcfcb;box-shadow:0 0 0 3px #dff5f3}
-.notice{font-size:10px;color:#6f8080;padding:0 22px 9px;background:white}
-.workspace{flex:1;min-height:0;padding:14px}
-.viewer{height:100%;background:white;border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:0 12px 38px #1232;position:relative}
+:root{--ars:#0aa7a4;--dark:#073b3b;--blue:#2e5ba7;--orange:#ef9a2f;--bg:#f4f7f6;--line:#dce7e5;--ink:#103536;--muted:#718281}
+*{box-sizing:border-box}html,body{margin:0;height:100%;font-family:Inter,Segoe UI,Arial,sans-serif;background:var(--bg);color:var(--ink)}
+body{overflow:hidden}.app{height:100vh;display:grid;grid-template-columns:290px 1fr}
+aside{background:linear-gradient(180deg,var(--dark),#052f30);color:#fff;padding:22px 16px;display:flex;flex-direction:column;min-height:0}
+.brand{padding:4px 10px 22px;border-bottom:1px solid #ffffff20}.brand strong{font-size:29px}.brand strong span{color:#28c9c5}.brand small{display:block;letter-spacing:4px;color:#b8cfce;margin-top:5px}
+.label{font-size:11px;letter-spacing:2.2px;color:#9fbdbc;margin:22px 10px 10px;text-transform:uppercase}
+.org{padding:11px 12px;border-radius:12px;margin:3px 0;color:#dce9e8}.org.active{background:#fff;color:#113b3b;font-weight:800}
+.folder{margin-top:16px;padding:11px 12px;border-radius:12px;background:#ffffff10;font-weight:800}
+.files{margin-top:6px;overflow:auto}.file{padding:11px 12px;border-radius:11px;margin:3px 0;cursor:pointer;color:#deebea}.file:hover{background:#ffffff0f}.file.active{background:#fff;color:#113b3b}
+.file b{display:block;font-size:13px;line-height:1.2}.file span{display:block;font-size:10px;opacity:.62;margin-top:4px}
+.foot{margin-top:auto;border-top:1px solid #ffffff20;padding:15px 10px 0;font-size:10px;line-height:1.6;color:#9db8b6}
+main{height:100vh;display:flex;flex-direction:column;min-width:0}
+.top{background:#fff;border-bottom:1px solid var(--line);padding:15px 22px 13px;display:flex;justify-content:space-between;align-items:flex-start;gap:18px}
+.crumb{font-size:11px;color:#7c8c8b;margin-bottom:6px}.crumb b{color:var(--ars)}h1{font-size:24px;margin:0}.sub{font-size:11px;color:var(--muted);margin-top:5px}
+.actions{display:flex;gap:8px;align-items:center;flex-wrap:wrap}.btn{border:1px solid var(--line);background:#fff;color:var(--ink);padding:10px 13px;border-radius:10px;font-size:11px;font-weight:800;text-decoration:none;cursor:pointer}.btn.primary{background:var(--dark);color:#fff;border-color:var(--dark)}
+.status{background:#fff;border-bottom:1px solid var(--line);padding:8px 22px;display:flex;justify-content:space-between;align-items:center;font-size:10px;color:#657776}
+.badge{background:#e0f6f3;color:#08716e;padding:6px 10px;border-radius:999px;font-weight:800}
+.work{flex:1;min-height:0;padding:12px 14px 15px}.viewer{height:100%;background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:0 12px 38px #1232;position:relative}
 iframe{width:100%;height:100%;border:0;background:white}
-.empty{height:100%;display:grid;place-items:center;text-align:center;padding:38px}
-.empty-inner{max-width:680px}.empty-icon{font-size:54px}.empty h2{font-size:24px;margin:12px 0 8px}.empty p{color:#718382;line-height:1.55;margin:7px 0}
-.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:20px}
-.card{background:#f8fbfa;border:1px solid var(--line);border-radius:13px;padding:14px;text-align:left}.card b{display:block;font-size:13px}.card span{font-size:10px;color:#7d8d8c}
-@media(max-width:960px){.app{grid-template-columns:210px 1fr}.toolbar{grid-template-columns:1fr}.cards{grid-template-columns:repeat(2,1fr)}}
+.empty{height:100%;display:grid;place-items:center;text-align:center;padding:40px}.empty div{max-width:620px}.empty h2{font-size:24px;margin:10px 0}.empty p{color:#708180;line-height:1.6}
+@media(max-width:900px){.app{grid-template-columns:220px 1fr}.top{padding-left:16px}.work{padding:10px}}
 </style>
 </head>
 <body>
@@ -51,68 +38,46 @@ iframe{width:100%;height:100%;border:0;background:white}
   <div class="org">FEE</div>
   <div class="org">Novandino</div>
   <div class="folder">📁 Plantillas Excel</div>
-  <div class="files">
-    <div class="file active">Visor de libro</div>
-    <div class="file">Dashboard</div>
-    <div class="file">Comparativos</div>
-  </div>
-  <div class="foot">© 2026 ARS Global Consultoría<br>Prototipo web estático · sin Replit.</div>
+  <div id="files" class="files"></div>
+  <div class="foot">© 2026 ARS Global Consultoría<br>Archivos alojados en Google Drive · acceso controlado.</div>
 </aside>
 <main>
   <header class="top">
     <div>
       <div class="crumb">Resultados / Candelaria / <b>Plantillas Excel</b></div>
-      <h1>Visor de libros Excel</h1>
-      <div class="sub">El libro lo renderiza Microsoft Office para la Web; ARS solo organiza la experiencia.</div>
+      <h1 id="title">Cultura organizacional</h1>
+      <div id="sub" class="sub">Archivo Excel original · vista dentro del portal.</div>
     </div>
     <div class="actions">
-      <button class="btn" onclick="showHome()">Inicio</button>
+      <a id="openDrive" class="btn" target="_blank">Abrir en Drive</a>
+      <a id="download" class="btn" target="_blank">Descargar XLSX</a>
       <button class="btn primary" onclick="full()">Pantalla completa</button>
     </div>
   </header>
-  <div class="toolbar">
-    <input id="url" class="input" placeholder="Pega aquí una URL pública directa a un archivo .xlsx (OneDrive, SharePoint, GitHub raw, etc.)">
-    <button class="btn" onclick="openUrl()">Abrir Excel</button>
-    <button class="btn" onclick="sample()">Probar muestra pública</button>
-  </div>
-  <div class="notice">Para proteger información de clientes, esta demo no publica ninguno de tus Excel. Cuando usemos una plantilla real, conviene alojarla en OneDrive/SharePoint con permisos controlados.</div>
-  <section class="workspace">
-    <div id="viewer" class="viewer"></div>
-  </section>
+  <div class="status"><span>Los seis Excel ya están cargados. Selecciona uno desde la carpeta de la izquierda.</span><span class="badge">Google Drive Viewer</span></div>
+  <section class="work"><div id="viewer" class="viewer"></div></section>
 </main>
 </div>
 <script>
-const viewer=document.getElementById('viewer'), input=document.getElementById('url');
-function homeHtml(){
-  return `<div class="empty"><div class="empty-inner">
-    <div class="empty-icon">📊</div>
-    <h2>Excel completo dentro del portal ARS</h2>
-    <p>Pega una URL pública de un archivo Excel y Microsoft Office para la Web lo abrirá dentro de este espacio, con sus hojas y formato propio.</p>
-    <p>Para probar la arquitectura sin exponer información real, usa la muestra pública.</p>
-    <div class="cards">
-      <div class="card"><b>1 · Carpeta ARS</b><span>Selecciona organización y módulo.</span></div>
-      <div class="card"><b>2 · Excel real</b><span>Microsoft renderiza el XLSX.</span></div>
-      <div class="card"><b>3 · Pantalla completa</b><span>El libro ocupa todo el espacio.</span></div>
-      <div class="card"><b>4 · Sin conversión</b><span>No PDF, no HTML reconstruido.</span></div>
-    </div>
-  </div></div>`;
+const books=[
+  {title:"Cultura organizacional",name:"Indicadores_Cultura_organizacional_2026.xlsx",id:"1E5sL465Q5rQ5le343LrlshhDPs0auv8Y"},
+  {title:"Conciliación y corresponsabilidad",name:"Indicadores_Conciliacion_corresponsabilidad_2026.xlsx",id:"1c4bFA8JO9A3Q4hXZC0EpcT3vhQa6EUzm"},
+  {title:"Desarrollo de carrera",name:"Indicadores_Desarrollo_carrera_2026.xlsx",id:"1tN91CIGMyu5stmTZy8h8vYDhacXKrQL9"},
+  {title:"Salud integral",name:"Indicadores_Salud_integral_2026.xlsx",id:"1g8KnVSDmPqUujfd-jMGSUln9Qx9YruRy"},
+  {title:"Violencia intrafamiliar",name:"Indicadores_Violencia_intrafamiliar_2026.xlsx",id:"1gwPOtm_4Y8Om2RUgRtqH7x3LTodn5zn5"},
+  {title:"Avances NCh3262",name:"Indicadores_Avances_NCh3262_2026.xlsx",id:"1YWVF68bBgU4BNhYKg8Mzw5eJh0lK0ltB"}
+];
+const list=document.getElementById("files"),viewer=document.getElementById("viewer"),title=document.getElementById("title"),sub=document.getElementById("sub"),openDrive=document.getElementById("openDrive"),download=document.getElementById("download");
+function openBook(i){
+  const b=books[i];
+  document.querySelectorAll(".file").forEach((x,j)=>x.classList.toggle("active",j===i));
+  title.textContent=b.title;sub.textContent=b.name+" · archivo Excel original en Google Drive";
+  openDrive.href="https://drive.google.com/file/d/"+b.id+"/view";
+  download.href="https://drive.google.com/uc?export=download&id="+b.id;
+  viewer.innerHTML='<iframe id="driveFrame" allowfullscreen src="https://drive.google.com/file/d/'+b.id+'/preview"></iframe>';
 }
-function showHome(){viewer.innerHTML=homeHtml()}
-function office(src){
-  if(!src)return;
-  const embed='https://view.officeapps.live.com/op/embed.aspx?src='+encodeURIComponent(src);
-  viewer.innerHTML='<iframe id="officeFrame" allowfullscreen src="'+embed+'"></iframe>';
-}
-function openUrl(){office(input.value.trim())}
-function sample(){
-  const u='https://raw.githubusercontent.com/shuchkin/simplexlsx/master/examples/books.xlsx';
-  input.value=u; office(u);
-}
-function full(){
-  const el=document.getElementById('officeFrame')||viewer;
-  if(el.requestFullscreen)el.requestFullscreen();
-}
-showHome();
+books.forEach((b,i)=>{const d=document.createElement("div");d.className="file";d.innerHTML='<b>📊 '+b.title+'</b><span>'+b.name+'</span>';d.onclick=()=>openBook(i);list.appendChild(d)});
+function full(){const el=document.getElementById("driveFrame")||viewer;if(el.requestFullscreen)el.requestFullscreen()}
+openBook(0);
 </script>
-</body>
-</html>
+</body></html>
