@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>ARS Global · Repositorio 2026</title>
 <style>
-:root{--ars:#0aa7a4;--dark:#073b3b;--blue:#2e5ba7;--orange:#ef9a2f;--bg:#f4f7f6;--line:#dce7e5;--ink:#103536;--muted:#718281}
+:root{--ars:#0aa7a4;--dark:#073b3b;--bg:#f4f7f6;--line:#dce7e5;--ink:#103536;--muted:#718281}
 *{box-sizing:border-box}html,body{margin:0;height:100%;font-family:Inter,Segoe UI,Arial,sans-serif;background:var(--bg);color:var(--ink)}
 body{overflow:hidden}.app{height:100vh;display:grid;grid-template-columns:290px 1fr}
 aside{background:linear-gradient(180deg,var(--dark),#052f30);color:#fff;padding:22px 16px;display:flex;flex-direction:column;min-height:0}
@@ -24,7 +24,6 @@ main{height:100vh;display:flex;flex-direction:column;min-width:0}
 .badge{background:#e0f6f3;color:#08716e;padding:6px 10px;border-radius:999px;font-weight:800}
 .work{flex:1;min-height:0;padding:12px 14px 15px}.viewer{height:100%;background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:0 12px 38px #1232;position:relative}
 iframe{width:100%;height:100%;border:0;background:white}
-.empty{height:100%;display:grid;place-items:center;text-align:center;padding:40px}.empty div{max-width:620px}.empty h2{font-size:24px;margin:10px 0}.empty p{color:#708180;line-height:1.6}
 @media(max-width:900px){.app{grid-template-columns:220px 1fr}.top{padding-left:16px}.work{padding:10px}}
 </style>
 </head>
@@ -34,49 +33,63 @@ iframe{width:100%;height:100%;border:0;background:white}
   <div class="brand"><strong>Ars <span>Global</span></strong><small>CONSULTORÍA</small></div>
   <div class="label">Resultados 2026</div>
   <div class="org active">Candelaria</div>
-  <div class="org">CEIM</div>
-  <div class="org">FEE</div>
-  <div class="org">Novandino</div>
+  <div class="org">CEIM</div><div class="org">FEE</div><div class="org">Novandino</div>
   <div class="folder">📁 Plantillas Excel</div>
   <div id="files" class="files"></div>
   <div class="foot">© 2026 ARS Global Consultoría<br>Archivos alojados en Google Drive · acceso controlado.</div>
 </aside>
 <main>
-  <header class="top">
-    <div>
-      <div class="crumb">Resultados / Candelaria / <b>Plantillas Excel</b></div>
-      <h1 id="title">Cultura organizacional</h1>
-      <div id="sub" class="sub">Archivo Excel original · vista dentro del portal.</div>
-    </div>
-    <div class="actions">
-      <a id="openDrive" class="btn" target="_blank">Abrir en Drive</a>
-      <a id="download" class="btn" target="_blank">Descargar XLSX</a>
-      <button class="btn primary" onclick="full()">Pantalla completa</button>
-    </div>
-  </header>
-  <div class="status"><span>Los seis Excel ya están cargados. Selecciona uno desde la carpeta de la izquierda.</span><span class="badge">Google Drive Viewer</span></div>
-  <section class="work"><div id="viewer" class="viewer"></div></section>
+<header class="top">
+  <div>
+    <div class="crumb">Resultados / Candelaria / <b>Plantillas Excel</b></div>
+    <h1 id="title">Cultura organizacional</h1>
+    <div id="sub" class="sub">XLSX original · sin convertir</div>
+  </div>
+  <div class="actions">
+    <button id="officeBtn" class="btn primary" onclick="setMode('office')">Modo Office</button>
+    <button id="driveBtn" class="btn" onclick="setMode('drive')">Vista Drive</button>
+    <a id="openDrive" class="btn" target="_blank">Abrir editor</a>
+    <a id="download" class="btn" target="_blank">Descargar XLSX</a>
+    <button class="btn primary" onclick="full()">Pantalla completa</button>
+  </div>
+</header>
+<div class="status"><span id="statusText">Probando el modo de edición Office de Google para el XLSX, no la vista previa oscura.</span><span id="statusBadge" class="badge">Office editing mode</span></div>
+<section class="work"><div id="viewer" class="viewer"></div></section>
 </main>
 </div>
 <script>
 const books=[
-  {title:"Cultura organizacional",name:"Indicadores_Cultura_organizacional_2026.xlsx",id:"1E5sL465Q5rQ5le343LrlshhDPs0auv8Y"},
-  {title:"Conciliación y corresponsabilidad",name:"Indicadores_Conciliacion_corresponsabilidad_2026.xlsx",id:"1c4bFA8JO9A3Q4hXZC0EpcT3vhQa6EUzm"},
-  {title:"Desarrollo de carrera",name:"Indicadores_Desarrollo_carrera_2026.xlsx",id:"1tN91CIGMyu5stmTZy8h8vYDhacXKrQL9"},
-  {title:"Salud integral",name:"Indicadores_Salud_integral_2026.xlsx",id:"1g8KnVSDmPqUujfd-jMGSUln9Qx9YruRy"},
-  {title:"Violencia intrafamiliar",name:"Indicadores_Violencia_intrafamiliar_2026.xlsx",id:"1gwPOtm_4Y8Om2RUgRtqH7x3LTodn5zn5"},
-  {title:"Avances NCh3262",name:"Indicadores_Avances_NCh3262_2026.xlsx",id:"1YWVF68bBgU4BNhYKg8Mzw5eJh0lK0ltB"}
+ {title:"Cultura organizacional",name:"Indicadores_Cultura_organizacional_2026.xlsx",id:"1E5sL465Q5rQ5le343LrlshhDPs0auv8Y"},
+ {title:"Conciliación y corresponsabilidad",name:"Indicadores_Conciliacion_corresponsabilidad_2026.xlsx",id:"1c4bFA8JO9A3Q4hXZC0EpcT3vhQa6EUzm"},
+ {title:"Desarrollo de carrera",name:"Indicadores_Desarrollo_carrera_2026.xlsx",id:"1tN91CIGMyu5stmTZy8h8vYDhacXKrQL9"},
+ {title:"Salud integral",name:"Indicadores_Salud_integral_2026.xlsx",id:"1g8KnVSDmPqUujfd-jMGSUln9Qx9YruRy"},
+ {title:"Violencia intrafamiliar",name:"Indicadores_Violencia_intrafamiliar_2026.xlsx",id:"1gwPOtm_4Y8Om2RUgRtqH7x3LTodn5zn5"},
+ {title:"Avances NCh3262",name:"Indicadores_Avances_NCh3262_2026.xlsx",id:"1YWVF68bBgU4BNhYKg8Mzw5eJh0lK0ltB"}
 ];
-const list=document.getElementById("files"),viewer=document.getElementById("viewer"),title=document.getElementById("title"),sub=document.getElementById("sub"),openDrive=document.getElementById("openDrive"),download=document.getElementById("download");
-function openBook(i){
-  const b=books[i];
-  document.querySelectorAll(".file").forEach((x,j)=>x.classList.toggle("active",j===i));
-  title.textContent=b.title;sub.textContent=b.name+" · archivo Excel original en Google Drive";
-  openDrive.href="https://drive.google.com/file/d/"+b.id+"/view";
-  download.href="https://drive.google.com/uc?export=download&id="+b.id;
-  viewer.innerHTML='<iframe id="driveFrame" allowfullscreen src="https://drive.google.com/file/d/'+b.id+'/preview"></iframe>';
+const list=document.getElementById("files"),viewer=document.getElementById("viewer"),title=document.getElementById("title"),sub=document.getElementById("sub"),openDrive=document.getElementById("openDrive"),download=document.getElementById("download"),officeBtn=document.getElementById("officeBtn"),driveBtn=document.getElementById("driveBtn"),statusText=document.getElementById("statusText"),statusBadge=document.getElementById("statusBadge");
+let currentIndex=0,currentMode="office";
+function renderBook(){
+ const b=books[currentIndex];
+ document.querySelectorAll(".file").forEach(function(x,j){x.classList.toggle("active",j===currentIndex)});
+ title.textContent=b.title;
+ sub.textContent=b.name+" · XLSX original, sin convertir";
+ openDrive.href="https://docs.google.com/spreadsheets/d/"+b.id+"/edit?usp=drivesdk";
+ download.href="https://drive.google.com/uc?export=download&id="+b.id;
+ officeBtn.classList.toggle("primary",currentMode==="office");
+ driveBtn.classList.toggle("primary",currentMode==="drive");
+ if(currentMode==="office"){
+   statusText.textContent="Modo Office: intenta abrir el XLSX con el editor de hojas de cálculo manteniendo el formato Office.";
+   statusBadge.textContent="Office editing mode";
+   viewer.innerHTML='<iframe id="driveFrame" allowfullscreen src="https://docs.google.com/spreadsheets/d/'+b.id+'/edit?rm=minimal&embedded=true"></iframe>';
+ }else{
+   statusText.textContent="Vista Drive de respaldo. Esta es la que mostró los triángulos de advertencia en algunos libros.";
+   statusBadge.textContent="Drive preview";
+   viewer.innerHTML='<iframe id="driveFrame" allowfullscreen src="https://drive.google.com/file/d/'+b.id+'/preview"></iframe>';
+ }
 }
-books.forEach((b,i)=>{const d=document.createElement("div");d.className="file";d.innerHTML='<b>📊 '+b.title+'</b><span>'+b.name+'</span>';d.onclick=()=>openBook(i);list.appendChild(d)});
+function openBook(i){currentIndex=i;renderBook()}
+function setMode(m){currentMode=m;renderBook()}
+books.forEach(function(b,i){const d=document.createElement("div");d.className="file";d.innerHTML='<b>📊 '+b.title+'</b><span>'+b.name+'</span>';d.onclick=function(){openBook(i)};list.appendChild(d)});
 function full(){const el=document.getElementById("driveFrame")||viewer;if(el.requestFullscreen)el.requestFullscreen()}
 openBook(0);
 </script>
