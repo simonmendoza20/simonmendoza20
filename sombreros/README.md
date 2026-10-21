@@ -11,11 +11,12 @@ Aplicación independiente de Atlas Estadístico.
 - Guardado en localStorage; exportación/importación JSON de respaldo, incluyendo selecciones, notas y citas propias.
 - Cuando se amplíe a 100 citas por sombrero, debe mantenerse la revisión individual de autor, obra, edición, localización y literalidad; no llenar cupos con frases atribuidas dudosas.
 
-## Activación de la página independiente
+## Página pública
 
-Este repositorio público todavía NO tiene GitHub Pages activado. El propietario debe abrir https://github.com/simonmendoza20/simonmendoza20/settings/pages y elegir «Deploy from a branch», rama `master`, carpeta `/(root)`, y guardar.
+GitHub Pages está activado; la publicación inicial terminó correctamente el 21 de octubre de 2026.
 
-Cuando GitHub confirme el despliegue, la dirección prevista es:
-https://simonmendoza20.github.io/simonmendoza20/sombreros/
+**Abrir la app**: https://simonmendoza20.github.io/simonmendoza20/sombreros/
 
-La anterior copia en el repositorio `atlas-estadistico` puede eliminarse cuando esta ubicación independiente esté comprobada como pública y funcional.
+El proyecto está separado de `atlas-estadistico`. La copia antigua de `atlas-estadistico/sombreros/index.html` se retiró una vez comprobado el despliegue exitoso de este repositorio.
+
+La selección de citas, las notas y los sombreros añadidos se guardan localmente en el navegador. Utiliza «Respaldar» e «Importar» para trasladarlos a otro dispositivo.
