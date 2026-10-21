@@ -67,7 +67,7 @@ else if(v==='network'){let nodes=[[180,140],[385,52],[385,220],[610,140]];s+=ln(
 else{s+=tx(395,125,'El resultado principal se entrega como tabla de estimaciones.',18,green,'middle',true)}
 return s+'</svg>'}
 function tableFor(t){if(t.slug==='alfa-de-cronbach')return [['Estadístico','Ejemplo'],['N de personas','240'],['Número de ítems','5'],['Alfa de Cronbach','0,86'],['Correlación ítem-total corregida','0,49 a 0,71'],['Alfa si se elimina un ítem','0,82 a 0,88']];
-let bits=t.out.split(' · ').map(x=>x.trim()).filter(Boolean);return [['Elemento del reporte','Resultado ilustrativo'],['Método',t.name],...bits.map((b,i)=>['Indicador '+(i+1),b]),['Presentación recomendable',t.format]]}
+let bits=t.out.split(' · ').map(x=>x.trim()).filter(Boolean);return [['Elemento del reporte','Resultado ilustrativo'],['Método',t.name],...bits.map((b,i)=>{let m=b.match(/^(.+?)\s*(=|<|>|≈)\s*(.+)$/);return m?[m[1],m[2]+' '+m[3]]:['Detalle '+(i+1),b]}),['Presentación recomendable',t.format]]}
 function report(t){return 'Ejemplo ilustrativo — '+t.name+': '+t.out+'. '+t.meaning}
 function selectedIndex(){return techniques.findIndex(t=>t.id===selected.id)}
 function updateHash(t){history.replaceState(null,'','#'+t.slug)}
