@@ -1,0 +1,355 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#f5f6f4" />
+  <meta name="description" content="Prototipo interactivo de diagnóstico de experiencia de servicio interno, con datos completamente simulados." />
+  <title>Experiencia interna — Explorador de relaciones</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+:root{--ink:#192a2a;--ink2:#293d3d;--subtle:#7b8582;--canvas:#f4f6f3;--paper:#fff;--border:#e5e9e5;--green:#2c6964;--greenlight:#e9f1ec;--brown:#bd825e;--radius:17px;--display:'Manrope',system-ui,sans-serif;--body:'DM Sans',system-ui,sans-serif}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--canvas);color:var(--ink);font-family:var(--body);font-size:14px;-webkit-font-smoothing:antialiased}button,select{font:inherit}button,a{-webkit-tap-highlight-color:transparent}button{cursor:pointer}a{text-decoration:none;color:inherit}a:focus-visible,button:focus-visible,select:focus-visible{outline:3px solid #9cc3b0;outline-offset:3px}#inicio,#relaciones,#prioridades,#metodologia{scroll-margin-top:95px}.site-shell{display:flex;min-height:100vh}.sidebar{position:sticky;top:0;height:100vh;width:253px;min-width:253px;padding:31px 19px 24px;background:#eaf0ec;border-right:1px solid #dae2dc;display:flex;flex-direction:column;z-index:30}.brand{display:flex;align-items:center;gap:13px;padding:2px 13px 30px}.brand-mark{height:39px;width:39px;display:grid;grid-template-columns:repeat(2,9px);grid-template-rows:repeat(2,9px);justify-content:center;align-content:center;gap:5px;border-radius:12px;background:#254e4a;transform:rotate(-8deg)}.brand-mark span{background:#cfdfd5;border-radius:2px}.brand-mark span:nth-child(2){background:#89ac9a}.brand-mark span:nth-child(3){background:#799f90}.brand-copy strong{display:block;font-family:var(--display);font-size:17px;letter-spacing:.14em;line-height:1.15}.brand-copy small{font-size:10px;color:#65736d;letter-spacing:.02em}.sidebar-label{padding:17px 14px 13px;font-size:9px;color:#8c9e93;letter-spacing:.18em;font-weight:700}.side-nav{display:grid;gap:4px}.nav-link{display:flex;align-items:center;gap:11px;padding:13px 12px;border-radius:10px;color:#5f7268;font-size:12px;font-weight:600;transition:.2s}.nav-link:hover{background:#dee9e1;color:#1e514b}.nav-link.is-active{background:#d3e3d8;color:#214f48}.nav-icon{font-size:17px;width:19px;text-align:center;font-weight:400}.nav-num{margin-left:auto;font-size:9px;opacity:.6}.sidebar-spacer{flex:1}.sidebar-bottom{padding:19px 13px 0;border-top:1px solid #d8e0d9}.concept-visual{position:relative;height:110px;width:100%;overflow:hidden;background:linear-gradient(142deg,#dae8da,#d0e0d7);border-radius:11px;margin-bottom:19px}.visual-dot{position:absolute;z-index:2;width:25px;height:25px;border-radius:50%;background:#628e79;box-shadow:0 0 0 8px #f0f5ecaa}.visual-dot.a{left:30px;top:32px}.visual-dot.b{left:101px;top:53px;width:34px;height:34px;background:#a4c3b0}.visual-dot.c{right:22px;top:24px;background:#cead8c}.visual-link{position:absolute;background:#8bad9d;height:1px;transform-origin:left}.visual-link.l1{width:95px;left:45px;top:50px;transform:rotate(18deg)}.visual-link.l2{width:79px;left:123px;top:66px;transform:rotate(-28deg)}.visual-link.l3{width:132px;left:45px;top:46px;transform:rotate(-8deg)}.sidebar-bottom-title{font-weight:700;font-family:var(--display);font-size:13px}.sidebar-bottom p{line-height:1.65;color:#738177;font-size:11px;margin:7px 0 15px}.footer-chip{display:inline-flex;align-items:center;gap:7px;font-size:10px;color:#65796f}.footer-chip i,.simulation-indicator span{display:block;background:#749d85;width:6px;height:6px;border-radius:50%}.main-wrap{min-width:0;flex:1}.topbar{height:76px;border-bottom:1px solid #e3e8e2;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(28px,4.1vw,78px);background:#f8faf7;gap:12px}.breadcrumb{display:flex;align-items:center;gap:11px;color:#7c8b83;font-size:11px}.breadcrumb strong{color:#4a6157;font-weight:600}.crumb-sep{opacity:.45}.top-actions{display:flex;align-items:center;gap:12px}.simulation-indicator{font-size:10px;letter-spacing:.12em;color:#61786c;display:flex;align-items:center;gap:8px;font-weight:700;background:#ebf2ed;padding:9px 12px;border-radius:6px}.simulation-indicator span{background:#588877}.outline-button,.icon-button,.light-button{border:1px solid #d9e2dc;background:#fff;color:#3e5d51;border-radius:8px;padding:11px 14px;font-size:11px;font-weight:700;transition:.18s}.outline-button:hover,.light-button:hover{border-color:#7fa996;background:#f0f6f1}.icon-button{height:33px;width:33px;border-radius:50%;padding:0;display:grid;place-items:center;font-size:13px}.tiny-icon{padding-right:6px;font-size:14px}main{max-width:1590px;margin:auto;padding:0 clamp(28px,4.1vw,78px)}.intro-section{padding-top:45px}.eyebrow,.mini-eyebrow{color:#648274;letter-spacing:.18em;font-weight:700;font-size:10px;display:flex;align-items:center;gap:11px}.eyebrow.small{font-size:10px}.mini-line{width:18px;height:1px;background:#91b0a0}.small-stamp{margin-left:auto;color:#a5b1a6;font-size:9px}.hero-grid{display:grid;grid-template-columns:minmax(0,1.8fr) minmax(280px,.82fr);gap:24px;margin-top:23px}.hero-left{padding:13px 0 25px}h1,h2,h3,p{margin-top:0}h1{font-family:var(--display);letter-spacing:-.065em;line-height:1.17;font-size:clamp(38px,3.58vw,62px);font-weight:700;margin:0 0 21px}h1 em{font-style:normal;color:#6b917e}.hero-description{max-width:670px;font-size:14px;color:#718078;line-height:1.85;margin-bottom:25px}.hero-cta{display:flex;align-items:center;gap:20px;color:#a0aca3;font-size:10px}.primary-button{display:inline-flex;align-items:center;justify-content:center;gap:33px;padding:13px 16px 13px 19px;background:#294f49;color:#fff;border:none;border-radius:7px;font-size:11px;font-weight:700;transition:transform .2s,background .2s}.primary-button:hover{background:#36675e;transform:translateY(-1px)}.primary-button span{font-size:16px}.hero-art{position:relative;min-height:261px;border-radius:16px;background:radial-gradient(circle at 70% 45%,#3f7268,#254d47 55%,#1c3f3a);overflow:hidden}.hero-art:after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.22;background-image:radial-gradient(#e1ede9 1px,transparent 1px);background-size:18px 18px}.art-corner{position:absolute;top:22px;left:24px;z-index:2;font-size:9px;letter-spacing:.16em;color:#c9ddd1}.network-illustration{position:absolute;inset:0;width:100%;height:100%;filter:drop-shadow(0 10px 15px #173f37aa)}.art-annotation{position:absolute;bottom:20px;left:24px;right:20px;z-index:2;color:#e3f0e8;font-size:10px;display:flex;gap:10px;align-items:center}.art-annotation span:first-child{color:#98c2aa}.section-divider{border-bottom:1px solid #dde5dc;display:flex;justify-content:space-between;padding:21px 0 14px;margin-bottom:20px;color:#92a499;font-size:9px;font-weight:700;letter-spacing:.17em}.metric-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}.metric-card{padding:21px 21px 20px;border:1px solid #e6eae5;border-radius:12px;background:#fff;min-height:135px;position:relative}.metric-top{display:flex;justify-content:space-between;align-items:center;gap:6px;color:#84938a;font-size:10px;font-weight:600}.metric-glyph{color:#719d87;font-size:16px}.metric-value{font-size:35px;font-family:var(--display);font-weight:700;letter-spacing:-.06em;margin-top:15px;line-height:1}.metric-unit{font-size:13px;letter-spacing:0;padding-left:2px;color:#7d9789}.metric-bottom{color:#9cad9e;font-size:10px;margin-top:12px}.section-space{padding-top:88px}.section-heading{display:flex;justify-content:space-between;align-items:flex-end;gap:18px;margin-bottom:25px}.section-heading h2{font-family:var(--display);font-size:clamp(25px,2.35vw,36px);font-weight:700;line-height:1.24;letter-spacing:-.045em;margin:13px 0 9px}.section-heading h2 span{color:#78988a}.section-heading p{font-size:12px;color:#87958c;line-height:1.65;margin-bottom:0;max-width:660px}.light-button{padding:12px 16px;font-size:11px;white-space:nowrap}.light-button span{font-size:16px;margin-right:6px}.chart-panel{background:#fff;border:1px solid #e4eae4;border-radius:15px;overflow:hidden}.toolbar{display:flex;justify-content:space-between;align-items:center;gap:14px;padding:18px 22px;border-bottom:1px solid #e9eeea;flex-wrap:wrap}.metric-toggle{padding:4px;background:#f2f5f2;border-radius:9px;display:flex;gap:3px}.metric-toggle button{background:transparent;border:0;color:#92a198;font-size:10px;font-weight:700;padding:9px 12px;border-radius:6px}.metric-toggle button.active{color:#285348;background:#fff;box-shadow:0 2px 8px #253d2a10}.toolbar-selectors{display:flex;gap:14px;align-items:center}.toolbar-selectors label{font-size:10px;color:#8c9c92}.toolbar-selectors select{background:#fff;border:0;color:#365348;font-weight:700;font-size:11px;max-width:152px;padding:7px 16px 7px 4px;cursor:pointer}.map-layout{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(246px,.72fr)}.matrix-area{padding:27px 22px 23px;min-width:0}.matrix-label{font-size:9px;color:#93a499;letter-spacing:.12em;font-weight:700;margin:0 0 18px 1px}.matrix-label span{color:#5e8a76}.heatmap-scroll{width:100%;overflow-x:auto}.heatmap{display:grid;grid-template-columns:116px repeat(6,minmax(52px,1fr));grid-template-rows:35px repeat(6,52px);gap:6px;min-width:490px}.hm-corner,.hm-col-label,.hm-row-label{display:flex;align-items:center;font-size:10px;color:#718578;font-weight:700}.hm-col-label{text-align:center;justify-content:center;font-size:9px}.hm-row-label{font-size:10px}.hm-cell{border:1px solid transparent;border-radius:7px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:2px;color:#30594e;font-weight:700;font-size:14px;transition:transform .2s,box-shadow .2s,filter .2s;min-width:0}.hm-cell:not(.not-applicable):hover{transform:scale(1.055);z-index:2;box-shadow:0 8px 22px #294e3b1d}.hm-cell.selected{outline:2px solid #2c6256;outline-offset:1px;z-index:2}.hm-cell.not-applicable{background:#f6f8f5;color:#c4cec6;cursor:default;font-size:10px}.hm-cell.is-filtered{opacity:.13;pointer-events:none}.hm-cell small{font-size:9px;font-weight:600;opacity:.62}.matrix-foot{display:flex;justify-content:space-between;gap:10px;align-items:center;flex-wrap:wrap;margin-top:23px}.legend{display:flex;gap:9px;align-items:center;font-size:9px;color:#8fa094}.legend-ramp{display:flex;gap:3px}.legend-ramp i{width:17px;height:7px;border-radius:2px;background:#c67861}.legend-ramp i:nth-child(2){background:#dca78e}.legend-ramp i:nth-child(3){background:#e6dbb7}.legend-ramp i:nth-child(4){background:#bdd7c7}.legend-ramp i:nth-child(5){background:#5b9f84}.map-hint{font-size:9px;color:#a1aea4}.map-hint span{color:#5f8978}.relationship-card{background:#f7faf6;border-left:1px solid #e6ede6;padding:29px 23px 23px}.detail-eyebrow{font-size:9px;color:#879a8c;letter-spacing:.16em;font-weight:800}.detail-title{font-family:var(--display);font-size:21px;line-height:1.35;letter-spacing:-.035em;margin:18px 0 7px}.detail-route{color:#8da297;font-size:11px}.detail-summary{font-size:11px;color:#718578;line-height:1.7;margin:19px 0}.detail-metrics{display:grid;gap:14px;padding:19px 0;border-top:1px solid #dce9df;border-bottom:1px solid #dce9df}.detail-metric-top{display:flex;justify-content:space-between;align-items:center;font-size:10px;color:#789082;margin-bottom:7px}.detail-metric-top strong{font-size:12px;color:#376d5c}.micro-track{background:#e0e9e0;border-radius:5px;height:6px;overflow:hidden}.micro-fill{height:100%;background:#71a58a;border-radius:6px}.micro-fill.is-low{background:#c98d73}.micro-fill.is-mid{background:#c6b278}.detail-takeaway{margin-top:20px;padding:13px;background:#eaf2ea;border-radius:8px;font-size:10px;line-height:1.6;color:#4d725f}.detail-takeaway strong{display:block;margin-bottom:4px;color:#315f4d;font-size:10px}.source-note{font-size:10px;color:#9aa69c;margin:13px 1px 0;line-height:1.6;max-width:950px}.source-note span{padding-right:6px}.priority-layout{display:grid;grid-template-columns:1.15fr 1fr;gap:15px}.large-card{background:#fff;border:1px solid #e5ece5;border-radius:14px;padding:26px;min-width:0}.card-head{display:flex;justify-content:space-between;gap:15px;margin-bottom:27px}.card-head h3{font-family:var(--display);font-size:18px;font-weight:700;letter-spacing:-.035em;margin:7px 0 0}.mini-eyebrow{font-size:9px;letter-spacing:.14em;color:#94a99b}.metric-note{color:#a6b0a7;font-size:9px;text-align:right}.priority-bars{display:grid;gap:23px}.bar-info{display:flex;justify-content:space-between;gap:10px;margin-bottom:10px}.bar-name{font-size:12px;font-weight:700;color:#405e50}.bar-name span{font-weight:400;color:#a6b5aa;padding:0 8px}.bar-number{font-size:11px;font-weight:700;color:#426654}.bar-track{height:9px;border-radius:10px;background:#edf2ed}.bar-fill{height:100%;border-radius:10px;background:#a7c4ad;transition:width .4s}.bar-row:first-child .bar-fill{background:#a77961}.bar-row:nth-child(2) .bar-fill{background:#b6a184}.bar-row:nth-child(3) .bar-fill{background:#78a18b}.card-explainer{border-top:1px solid #e9eee8;display:flex;align-items:flex-start;gap:11px;margin-top:32px;padding-top:18px}.small-circle{height:17px;min-width:17px;display:grid;place-items:center;background:#ecf4ed;color:#739d80;border-radius:50%;font-size:10px;font-weight:700}.card-explainer p{font-size:10px;color:#95a49a;line-height:1.7;margin:0}.secondary-card{background:#f8faf7}.action-path{display:grid;gap:20px}.action-item{display:flex;gap:17px}.action-n{color:#9eb4a3;font-family:var(--display);font-size:11px;font-weight:800;padding-top:2px}.action-item strong{font-size:12px;color:#3c5d4e}.action-item p{font-size:11px;color:#889c8c;line-height:1.65;margin:5px 0 0}.method-section{padding-bottom:60px}.method-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.method-card{background:#fff;border:1px solid #e4eae4;border-radius:13px;padding:21px;min-height:224px}.method-number{font-size:9px;font-weight:700;color:#9ab0a2;letter-spacing:.1em}.method-icon{font-size:35px;margin:22px 0 16px;color:#69927d;line-height:1}.method-card h3{font-family:var(--display);font-size:15px;letter-spacing:-.025em;margin-bottom:8px}.method-card p{color:#94a399;font-size:11px;line-height:1.68}.method-outro{background:#22463f;border-radius:12px;margin-top:25px;padding:27px 30px;display:flex;justify-content:space-between;align-items:center;gap:20px;color:#fff}.method-outro .mini-eyebrow{color:#90b6a1}.method-outro p{font-family:var(--display);font-size:20px;letter-spacing:-.04em;margin:8px 0 0}.outline-button.dark{background:transparent;color:#e9f3e9;border-color:#638578}.outline-button.dark:hover{background:#2f6054}.site-footer{border-top:1px solid #e1e8df;padding:23px 0 33px;display:flex;justify-content:space-between;gap:12px;font-size:10px;color:#a0b0a2}.site-footer span{padding:0 7px;color:#c4cec3}.dialog-backdrop{position:fixed;inset:0;background:#172d27af;display:flex;align-items:center;justify-content:center;z-index:100;padding:18px;backdrop-filter:blur(6px)}.dialog-backdrop[hidden]{display:none}.dialog{background:#fff;border-radius:19px;padding:39px;max-width:590px;width:100%;max-height:94vh;overflow-y:auto;position:relative;box-shadow:0 20px 90px #153e3047}.close-modal{position:absolute;right:19px;top:13px;background:none;border:0;font-size:29px;color:#95a69b}.dialog h2{font-family:var(--display);font-size:28px;letter-spacing:-.05em;line-height:1.22;margin:13px 0}.dialog-lead{font-size:12px;color:#7a8b80;line-height:1.6}.script-list{display:grid;gap:14px;margin:24px 0 29px}.script-list>div{border-left:2px solid #9aba9e;padding-left:15px}.script-list span{font-size:9px;color:#819f89;font-weight:700;letter-spacing:.1em}.script-list p{font-size:12px;line-height:1.7;margin:6px 0 0;color:#466053}.primary-button.full{width:100%;justify-content:space-between}@media(max-width:1300px){.sidebar{width:215px;min-width:215px;padding:27px 13px}.topbar{padding:0 28px}main{padding:0 28px}.hero-grid{grid-template-columns:minmax(0,1.55fr) minmax(250px,1fr)}h1{font-size:clamp(36px,3.5vw,48px)}.map-layout{grid-template-columns:minmax(0,1fr)}.relationship-card{border-left:0;border-top:1px solid #e6ede6;display:grid;grid-template-columns:1fr 1.3fr;column-gap:26px}.detail-eyebrow,.detail-title,.detail-route,.detail-summary{grid-column:1}.detail-metrics{grid-column:2;grid-row:1 / span 4}.detail-takeaway{grid-column:1 / -1}.heatmap{max-width:850px;margin:auto}.priority-layout{grid-template-columns:1fr 1fr}}@media(max-width:950px){.sidebar{width:72px;min-width:72px;align-items:center;padding:21px 7px}.brand{padding:0 0 30px}.brand-copy,.sidebar-label,.nav-link span:not(.nav-icon),.sidebar-bottom{display:none}.nav-link{padding:12px}.nav-icon{font-size:21px;width:22px}.side-nav{width:auto}.hero-grid{grid-template-columns:1fr}.hero-art{min-height:195px}.network-illustration{max-width:450px;left:50%;transform:translateX(-50%)}.metric-grid{grid-template-columns:repeat(2,1fr)}.priority-layout{grid-template-columns:1fr}.method-grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:680px){.site-shell{display:block}.sidebar{position:sticky;height:58px;width:100%;min-width:0;display:flex;flex-direction:row;justify-content:space-between;padding:8px 14px;align-items:center;border-right:0;border-bottom:1px solid #dce5db}.brand{padding:0}.brand-mark{width:31px;height:31px;grid-template-columns:repeat(2,7px);grid-template-rows:repeat(2,7px);gap:3px}.side-nav{display:flex;gap:3px}.nav-link{padding:8px}.nav-icon{font-size:16px}.topbar{height:57px;padding:0 17px}.breadcrumb{font-size:9px}.breadcrumb span:first-child,.crumb-sep{display:none}.top-actions{gap:7px}.simulation-indicator{font-size:8px;padding:8px}.top-actions .outline-button{display:none}main{padding:0 17px}.intro-section{padding-top:28px}.hero-grid{margin-top:17px}.hero-left{padding:3px 0 8px}h1{font-size:39px}.hero-description{font-size:12px}.hero-art{min-height:165px}.art-annotation{font-size:9px}.section-divider{margin-top:9px}.metric-grid{gap:9px}.metric-card{padding:16px;min-height:126px}.metric-value{font-size:31px}.section-space{padding-top:65px}.section-heading{display:block}.section-heading h2{font-size:27px}.section-action{margin-top:15px}.toolbar{padding:14px}.toolbar-selectors{width:100%;justify-content:space-between}.toolbar-selectors select{max-width:115px}.metric-toggle{width:100%;justify-content:space-around}.metric-toggle button{font-size:9px;padding:9px 7px}.matrix-area{padding:23px 12px}.matrix-label{font-size:8px}.matrix-foot{justify-content:center}.map-hint{display:none}.relationship-card{display:block;padding:24px}.detail-metrics{margin-top:12px}.heatmap{min-width:510px}.method-grid{gap:9px}.method-card{min-height:220px;padding:16px}.method-outro{align-items:flex-start;flex-direction:column}.site-footer{flex-direction:column;font-size:9px}.dialog{padding:30px 22px}}
+
+</style>
+  <script defer>
+// Datos ficticios y agregados. No representan mediciones de ISALUD.
+window.DEMO_ROWS = [
+  {
+    "solicitante": "Atención",
+    "prestadora": "Beneficios",
+    "evaluaciones": 48,
+    "satisfaccion": 86,
+    "cumplimiento": 81,
+    "facilidad": 87
+  },
+  {
+    "solicitante": "Atención",
+    "prestadora": "Finanzas",
+    "evaluaciones": 34,
+    "satisfaccion": 73,
+    "cumplimiento": 69,
+    "facilidad": 63
+  },
+  {
+    "solicitante": "Atención",
+    "prestadora": "Operaciones",
+    "evaluaciones": 33,
+    "satisfaccion": 92,
+    "cumplimiento": 92,
+    "facilidad": 80
+  },
+  {
+    "solicitante": "Atención",
+    "prestadora": "Personas",
+    "evaluaciones": 52,
+    "satisfaccion": 81,
+    "cumplimiento": 75,
+    "facilidad": 69
+  },
+  {
+    "solicitante": "Atención",
+    "prestadora": "Tecnología",
+    "evaluaciones": 57,
+    "satisfaccion": 58,
+    "cumplimiento": 55,
+    "facilidad": 53
+  },
+  {
+    "solicitante": "Beneficios",
+    "prestadora": "Atención",
+    "evaluaciones": 43,
+    "satisfaccion": 82,
+    "cumplimiento": 75,
+    "facilidad": 78
+  },
+  {
+    "solicitante": "Beneficios",
+    "prestadora": "Finanzas",
+    "evaluaciones": 34,
+    "satisfaccion": 88,
+    "cumplimiento": 89,
+    "facilidad": 85
+  },
+  {
+    "solicitante": "Beneficios",
+    "prestadora": "Operaciones",
+    "evaluaciones": 28,
+    "satisfaccion": 60,
+    "cumplimiento": 64,
+    "facilidad": 55
+  },
+  {
+    "solicitante": "Beneficios",
+    "prestadora": "Personas",
+    "evaluaciones": 37,
+    "satisfaccion": 77,
+    "cumplimiento": 78,
+    "facilidad": 67
+  },
+  {
+    "solicitante": "Beneficios",
+    "prestadora": "Tecnología",
+    "evaluaciones": 43,
+    "satisfaccion": 70,
+    "cumplimiento": 68,
+    "facilidad": 77
+  },
+  {
+    "solicitante": "Finanzas",
+    "prestadora": "Atención",
+    "evaluaciones": 33,
+    "satisfaccion": 93,
+    "cumplimiento": 96,
+    "facilidad": 90
+  },
+  {
+    "solicitante": "Finanzas",
+    "prestadora": "Beneficios",
+    "evaluaciones": 41,
+    "satisfaccion": 84,
+    "cumplimiento": 83,
+    "facilidad": 78
+  },
+  {
+    "solicitante": "Finanzas",
+    "prestadora": "Operaciones",
+    "evaluaciones": 29,
+    "satisfaccion": 85,
+    "cumplimiento": 91,
+    "facilidad": 77
+  },
+  {
+    "solicitante": "Finanzas",
+    "prestadora": "Personas",
+    "evaluaciones": 33,
+    "satisfaccion": 77,
+    "cumplimiento": 83,
+    "facilidad": 71
+  },
+  {
+    "solicitante": "Finanzas",
+    "prestadora": "Tecnología",
+    "evaluaciones": 32,
+    "satisfaccion": 88,
+    "cumplimiento": 86,
+    "facilidad": 83
+  },
+  {
+    "solicitante": "Operaciones",
+    "prestadora": "Atención",
+    "evaluaciones": 56,
+    "satisfaccion": 91,
+    "cumplimiento": 89,
+    "facilidad": 96
+  },
+  {
+    "solicitante": "Operaciones",
+    "prestadora": "Beneficios",
+    "evaluaciones": 39,
+    "satisfaccion": 69,
+    "cumplimiento": 64,
+    "facilidad": 65
+  },
+  {
+    "solicitante": "Operaciones",
+    "prestadora": "Finanzas",
+    "evaluaciones": 44,
+    "satisfaccion": 54,
+    "cumplimiento": 61,
+    "facilidad": 49
+  },
+  {
+    "solicitante": "Operaciones",
+    "prestadora": "Personas",
+    "evaluaciones": 49,
+    "satisfaccion": 73,
+    "cumplimiento": 73,
+    "facilidad": 73
+  },
+  {
+    "solicitante": "Operaciones",
+    "prestadora": "Tecnología",
+    "evaluaciones": 28,
+    "satisfaccion": 82,
+    "cumplimiento": 84,
+    "facilidad": 80
+  },
+  {
+    "solicitante": "Personas",
+    "prestadora": "Atención",
+    "evaluaciones": 40,
+    "satisfaccion": 91,
+    "cumplimiento": 87,
+    "facilidad": 97
+  },
+  {
+    "solicitante": "Personas",
+    "prestadora": "Beneficios",
+    "evaluaciones": 51,
+    "satisfaccion": 77,
+    "cumplimiento": 75,
+    "facilidad": 76
+  },
+  {
+    "solicitante": "Personas",
+    "prestadora": "Finanzas",
+    "evaluaciones": 26,
+    "satisfaccion": 71,
+    "cumplimiento": 75,
+    "facilidad": 68
+  },
+  {
+    "solicitante": "Personas",
+    "prestadora": "Operaciones",
+    "evaluaciones": 52,
+    "satisfaccion": 81,
+    "cumplimiento": 74,
+    "facilidad": 70
+  },
+  {
+    "solicitante": "Personas",
+    "prestadora": "Tecnología",
+    "evaluaciones": 29,
+    "satisfaccion": 77,
+    "cumplimiento": 81,
+    "facilidad": 77
+  },
+  {
+    "solicitante": "Tecnología",
+    "prestadora": "Atención",
+    "evaluaciones": 58,
+    "satisfaccion": 82,
+    "cumplimiento": 89,
+    "facilidad": 83
+  },
+  {
+    "solicitante": "Tecnología",
+    "prestadora": "Beneficios",
+    "evaluaciones": 49,
+    "satisfaccion": 93,
+    "cumplimiento": 91,
+    "facilidad": 90
+  },
+  {
+    "solicitante": "Tecnología",
+    "prestadora": "Finanzas",
+    "evaluaciones": 43,
+    "satisfaccion": 78,
+    "cumplimiento": 78,
+    "facilidad": 70
+  },
+  {
+    "solicitante": "Tecnología",
+    "prestadora": "Operaciones",
+    "evaluaciones": 45,
+    "satisfaccion": 90,
+    "cumplimiento": 83,
+    "facilidad": 96
+  },
+  {
+    "solicitante": "Tecnología",
+    "prestadora": "Personas",
+    "evaluaciones": 25,
+    "satisfaccion": 62,
+    "cumplimiento": 69,
+    "facilidad": 61
+  }
+];
+
+</script>
+  <script defer>
+(() => {
+'use strict';
+const rows = window.DEMO_ROWS || [];
+const areas = ['Atención', 'Beneficios', 'Finanzas', 'Operaciones', 'Personas', 'Tecnología'];
+const metrics = {satisfaccion:'Satisfacción', cumplimiento:'Cumplimiento de plazos', facilidad:'Facilidad de gestión'};
+let metric='satisfaccion',source='all',target='all',selected={solicitante:'Operaciones',prestadora:'Finanzas'};
+const $ = s=>document.querySelector(s);
+const fmt = n=>new Intl.NumberFormat('es-CL',{maximumFractionDigits:0}).format(n);
+const filtered=()=>rows.filter(r=>(source==='all'||r.solicitante===source)&&(target==='all'||r.prestadora===target));
+const weighted = (arr,key) => arr.length? Math.round(arr.reduce((a,r)=>a+r[key]*r.evaluaciones,0)/arr.reduce((a,r)=>a+r.evaluaciones,0)):0;
+const labelClass = v=>v<65?'is-low':v<78?'is-mid':'';
+const cellColor=v=>v<60?'#f1cfc4':v<65?'#f1dbcf':v<70?'#f4e7d9':v<77?'#e5e7ce':v<84?'#d1e5d7':'#b8dccc';
+const cellText=v=>v<65?'#995b47':v<75?'#7e775b':'#2c6958';
+const el=(tag,cls,text)=>{const o=document.createElement(tag);if(cls)o.className=cls;if(text!==undefined)o.textContent=text;return o};
+function renderKPIs(){const ds=filtered(),n=ds.reduce((a,r)=>a+r.evaluaciones,0),sat=weighted(ds,'satisfaccion'),time=weighted(ds,'cumplimiento'),critical=ds.filter(r=>r.satisfaccion<65).length;const data=[{label:'Evaluaciones consideradas',value:fmt(n),unit:'',bottom:`${ds.length} relaciones analizadas`,ico:'▧'},{label:'Satisfacción general',value:sat,unit:'%',bottom:'Promedio ponderado',ico:'◉'},{label:'Relaciones críticas',value:critical,unit:'',bottom:'Menos de 65% de satisfacción',ico:'↗'},{label:'Cumplimiento de plazos',value:time,unit:'%',bottom:'Promedio ponderado',ico:'◷'}];$('#kpis').innerHTML=data.map(d=>`<article class="metric-card"><div class="metric-top"><span>${d.label}</span><span class="metric-glyph">${d.ico}</span></div><div class="metric-value">${d.value}<span class="metric-unit">${d.unit}</span></div><div class="metric-bottom">${d.bottom}</div></article>`).join('')}
+function renderHeatmap(){const container=$('#heatmap');container.replaceChildren();container.appendChild(el('div','hm-corner',''));areas.forEach(a=>container.appendChild(el('div','hm-col-label',a)));areas.forEach(s=>{container.appendChild(el('div','hm-row-label',s));areas.forEach(t=>{const r=rows.find(x=>x.solicitante===s&&x.prestadora===t);if(!r){container.appendChild(el('div','hm-cell not-applicable','—'));return}const cell=el('button','hm-cell');const isfiltered=(source!=='all'&&s!==source)||(target!=='all'&&t!==target);if(isfiltered)cell.classList.add('is-filtered');if(selected.solicitante===s&&selected.prestadora===t)cell.classList.add('selected');cell.style.background=cellColor(r[metric]);cell.style.color=cellText(r[metric]);cell.disabled=isfiltered;cell.setAttribute('type','button');cell.setAttribute('aria-label',`${s} solicita a ${t}: ${r[metric]}%, ${r.evaluaciones} evaluaciones`);cell.title=`${s} → ${t} | ${r[metric]}% | n=${r.evaluaciones}`;cell.appendChild(el('span','',`${r[metric]}%`));cell.appendChild(el('small','',`n=${r.evaluaciones}`));cell.addEventListener('click',()=>{selected={solicitante:s,prestadora:t};renderHeatmap();renderDetail()});container.appendChild(cell)})})}
+function renderDetail(){let r=rows.find(x=>x.solicitante===selected.solicitante&&x.prestadora===selected.prestadora);const ds=filtered();if(!r||!ds.includes(r)){r=ds[0];if(!r){$('#relationshipDetail').innerHTML='<div class="detail-title">Sin datos para esta selección</div>';return}selected={solicitante:r.solicitante,prestadora:r.prestadora}}
+const v=r[metric],status=v<65?'Área a explorar con prioridad':v<78?'Relación con oportunidades de mejora':'Relación con evaluación favorable';
+const explanation=v<65?'La valoración sugiere revisar los acuerdos de servicio y contrastar las percepciones con evidencia operativa.':v<78?'Existe espacio para profundizar en atributos concretos antes de diseñar mejoras.':'Conviene identificar las prácticas que funcionan para evaluar si pueden transferirse a otras relaciones.';
+$('#relationshipDetail').innerHTML=`<div class="detail-eyebrow">RELACIÓN SELECCIONADA</div><h3 class="detail-title">${r.solicitante}<br><span style="color:#8eaa99;font-weight:400">→</span> ${r.prestadora}</h3><div class="detail-route">${fmt(r.evaluaciones)} evaluaciones simuladas</div><p class="detail-summary">${explanation}</p><div class="detail-metrics">${[['Satisfacción',r.satisfaccion],['Cumplimiento de plazos',r.cumplimiento],['Facilidad de gestión',r.facilidad]].map(([a,v])=>`<div><div class="detail-metric-top"><span>${a}</span><strong>${v}%</strong></div><div class="micro-track"><div class="micro-fill ${labelClass(v)}" style="width:${v}%"></div></div></div>`).join('')}</div><div class="detail-takeaway"><strong>${status}</strong>Próximo paso: contrastar con entrevistas breves y revisar trazabilidad de las solicitudes.</div>`}
+function renderPriorities(){const ds=filtered();const ranked=ds.map(r=>({...r,estimated:r.evaluaciones*(100-r.satisfaccion)/100})).sort((a,b)=>b.estimated-a.estimated).slice(0,5);const mx=Math.max(...ranked.map(x=>x.estimated),1);$('#priorityBars').innerHTML=ranked.length?ranked.map((r,i)=>`<div class="bar-row"><div class="bar-info"><div class="bar-name">${r.solicitante} <span>→</span> ${r.prestadora}</div><div class="bar-number">${Math.round(r.estimated)} <span style="color:#a0b0a3;font-weight:400">aprox.</span></div></div><div class="bar-track"><div class="bar-fill" style="width:${(r.estimated/mx*100).toFixed(1)}%"></div></div></div>`).join(''):'<div class="detail-summary">No hay relaciones para mostrar.</div>'}
+function update(){const ds=filtered();if(!ds.some(r=>r.solicitante===selected.solicitante&&r.prestadora===selected.prestadora)&&ds.length)selected={solicitante:ds[0].solicitante,prestadora:ds[0].prestadora};renderKPIs();renderHeatmap();renderDetail();renderPriorities()}
+function init(){if(!rows.length){$('main').innerHTML='<h1>No se encontraron los datos de demostración.</h1>';return}for(const a of areas){$('#sourceFilter').appendChild(new Option(a,a));$('#targetFilter').appendChild(new Option(a,a))}$('#sourceFilter').addEventListener('change',e=>{source=e.target.value;update()});$('#targetFilter').addEventListener('change',e=>{target=e.target.value;update()});document.querySelectorAll('[data-metric]').forEach(b=>b.addEventListener('click',()=>{metric=b.dataset.metric;document.querySelectorAll('[data-metric]').forEach(x=>x.classList.toggle('active',x===b));renderHeatmap();renderDetail()}));$('#exportBtn').addEventListener('click',()=>{const h=['solicitante','prestadora','evaluaciones','satisfaccion','cumplimiento','facilidad'];const lines=[h.join(';'),...filtered().map(r=>h.map(k=>r[k]).join(';'))];const blob=new Blob(['\ufeff'+lines.join('\r\n')],{type:'text/csv;charset=utf-8'});const url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='demostracion_experiencia_servicio_datos_simulados.csv';document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000)});
+const modal=$('#guideModal');const open=()=>{modal.hidden=false;document.body.style.overflow='hidden';$('#closeGuide').focus()};const close=()=>{modal.hidden=true;document.body.style.overflow=''};$('#openGuide').addEventListener('click',open);$('#presentBtn').addEventListener('click',open);$('#openGuideBottom').addEventListener('click',open);$('#closeGuide').addEventListener('click',close);$('#closeGuideBottom').addEventListener('click',close);modal.addEventListener('click',e=>{if(e.target===modal)close()});document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!modal.hidden)close()});
+const links=document.querySelectorAll('[data-nav]');const observer=new IntersectionObserver(entries=>{const visibles=entries.filter(e=>e.isIntersecting).sort((a,b)=>b.intersectionRatio-a.intersectionRatio);if(visibles[0])links.forEach(l=>l.classList.toggle('is-active',l.dataset.nav===visibles[0].target.id))},{rootMargin:'-15% 0px -55% 0px',threshold:[0,.1,.4]});['inicio','relaciones','prioridades','metodologia'].forEach(id=>observer.observe(document.getElementById(id)));update()}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
+})();
+
+</script>
+</head>
+<body>
+  <div class="site-shell">
+    <aside class="sidebar" aria-label="Navegación principal">
+      <a href="#inicio" class="brand" aria-label="Regresar al resumen">
+        <div class="brand-mark" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+        <div class="brand-copy"><strong>ENTRE</strong><small>Inteligencia de servicio</small></div>
+      </a>
+      <div class="sidebar-label">ESPACIO DE ANÁLISIS</div>
+      <nav class="side-nav" aria-label="Secciones">
+        <a class="nav-link is-active" href="#inicio" data-nav="inicio"><span class="nav-icon">◫</span><span>Panorama general</span><span class="nav-num">01</span></a>
+        <a class="nav-link" href="#relaciones" data-nav="relaciones"><span class="nav-icon">▦</span><span>Mapa de relaciones</span><span class="nav-num">02</span></a>
+        <a class="nav-link" href="#prioridades" data-nav="prioridades"><span class="nav-icon">↗</span><span>Focos de mejora</span><span class="nav-num">03</span></a>
+        <a class="nav-link" href="#metodologia" data-nav="metodologia"><span class="nav-icon">◎</span><span>Metodología</span><span class="nav-num">04</span></a>
+      </nav>
+      <div class="sidebar-spacer"></div>
+      <div class="sidebar-bottom">
+        <div class="concept-visual"><span class="visual-dot a"></span><span class="visual-dot b"></span><span class="visual-dot c"></span><span class="visual-link l1"></span><span class="visual-link l2"></span><span class="visual-link l3"></span></div>
+        <div class="sidebar-bottom-title">De la percepción a la acción.</div>
+        <p>Una forma de comprender dónde se producen las fricciones entre equipos.</p>
+        <span class="footer-chip"><i></i> Prototipo conceptual</span>
+      </div>
+    </aside>
+
+    <div class="main-wrap">
+      <header class="topbar">
+        <div class="breadcrumb"><span>Laboratorio de experiencia</span><span class="crumb-sep">/</span><strong>Diagnóstico interáreas</strong></div>
+        <div class="top-actions"><span class="simulation-indicator"><span></span> DATOS SIMULADOS</span><button id="openGuide" class="icon-button" aria-label="Cómo usar esta demostración" title="Cómo usar esta demostración">?</button><button id="presentBtn" class="outline-button"><span class="tiny-icon">▣</span> Guion de exposición</button></div>
+      </header>
+
+      <main>
+        <section class="intro-section" id="inicio">
+          <div class="eyebrow"><span class="mini-line"></span> SISTEMA DE INTELIGENCIA ORGANIZACIONAL <span class="small-stamp">01 / PANORAMA</span></div>
+          <div class="hero-grid">
+            <div class="hero-left"><h1>La experiencia interna<br>se construye <em>entre equipos.</em></h1><p class="hero-description">Una lectura de las relaciones de servicio que permite pasar de las percepciones a las decisiones. Explora qué funciona, dónde existe fricción y qué conviene mejorar primero.</p><div class="hero-cta"><a class="primary-button" href="#relaciones">Explorar mapa <span aria-hidden="true">↗</span></a><span>Diagnóstico ilustrativo · 6 áreas</span></div></div>
+            <div class="hero-art" aria-hidden="true"><div class="art-corner">RELACIONES / 2026</div><svg viewBox="0 0 400 260" class="network-illustration"><defs><linearGradient id="lineGrad" x1="0" x2="1"><stop stop-color="#92c1b5" stop-opacity=".3"/><stop offset="1" stop-color="#d9ead9" stop-opacity=".7"/></linearGradient></defs><path d="M46 152L141 64L232 144L341 74M46 152L147 219L232 144L348 211M141 64L348 211M141 64L341 74M147 219L341 74" stroke="url(#lineGrad)" stroke-width="1.3" fill="none"/><circle cx="46" cy="152" r="12" fill="#e4ebe6"/><circle cx="141" cy="64" r="16" fill="#cfddcf"/><circle cx="232" cy="144" r="27" fill="#e8e9dd"/><circle cx="341" cy="74" r="13" fill="#d5e3d7"/><circle cx="147" cy="219" r="10" fill="#dfeae0"/><circle cx="348" cy="211" r="17" fill="#d9c9b5"/><circle cx="232" cy="144" r="7" fill="#658876"/><circle cx="141" cy="64" r="4" fill="#769b86"/><circle cx="348" cy="211" r="4" fill="#a27b5f"/></svg><div class="art-annotation"><span>01</span> Identificar vínculos <span>→</span> Medir experiencia</div></div>
+          </div>
+          <div class="section-divider"><span>VISTA EJECUTIVA</span><span>INDICADORES DE REFERENCIA</span></div>
+          <div class="metric-grid" id="kpis"></div>
+        </section>
+
+        <section class="section-space" id="relaciones">
+          <div class="section-heading"><div><div class="eyebrow small">02 / DIAGNÓSTICO DE INTERACCIONES</div><h2>Un mapa de lo que ocurre <span>entre áreas.</span></h2><p>Selecciona un indicador y observa la experiencia desde quien solicita el servicio hacia quien lo entrega.</p></div><div class="section-action"><button id="exportBtn" class="light-button"><span>↓</span> Descargar datos CSV</button></div></div>
+          <div class="chart-panel">
+            <div class="toolbar"><div class="metric-toggle" role="group" aria-label="Indicador de la matriz"><button data-metric="satisfaccion" class="active">Satisfacción</button><button data-metric="cumplimiento">Cumplimiento</button><button data-metric="facilidad">Facilidad</button></div><div class="toolbar-selectors"><label for="sourceFilter">Solicita <select id="sourceFilter"><option value="all">Todas las áreas</option></select></label><label for="targetFilter">Entrega <select id="targetFilter"><option value="all">Todas las áreas</option></select></label></div></div>
+            <div class="map-layout"><div class="matrix-area"><div class="matrix-label">ÁREA QUE SOLICITA <span>↓</span> / ÁREA QUE ENTREGA <span>→</span></div><div class="heatmap-scroll"><div id="heatmap" class="heatmap" role="group" aria-label="Matriz de experiencia entre áreas"></div></div><div class="matrix-foot"><div class="legend"><span>Menor valoración</span><div class="legend-ramp"><i></i><i></i><i></i><i></i><i></i></div><span>Mayor valoración</span></div><div class="map-hint">Haz clic en una celda para ver el detalle <span>↗</span></div></div></div><div class="relationship-card" id="relationshipDetail" aria-live="polite"></div></div>
+          </div>
+          <p class="source-note"><span>ⓘ</span> Las cifras, relaciones y nombres de áreas son ficticios. No representan mediciones, estructura ni resultados de ISALUD. Los porcentajes usan como denominador las evaluaciones simuladas de cada relación.</p>
+        </section>
+
+        <section class="section-space" id="prioridades">
+          <div class="section-heading"><div><div class="eyebrow small">03 / OPORTUNIDADES DE MEJORA</div><h2>De los indicadores a <span>las decisiones.</span></h2><p>La prioridad combina frecuencia y desfavorabilidad. No es una prueba causal: orienta dónde comenzar a indagar.</p></div></div>
+          <div class="priority-layout"><article class="large-card"><div class="card-head"><div><span class="mini-eyebrow">LECTURA DE PRIORIDADES</span><h3>Relaciones que requieren atención</h3></div><div class="metric-note" id="priorityUnit">Evaluaciones desfavorables estimadas</div></div><div id="priorityBars" class="priority-bars"></div><div class="card-explainer"><span class="small-circle">i</span><p>Estimación exploratoria = volumen de evaluaciones × proporción no favorable. Se utiliza solo para ordenar oportunidades, no para medir incidentes reales.</p></div></article><article class="large-card secondary-card"><div class="card-head"><div><span class="mini-eyebrow">DEL HALLAZGO A LA ACCIÓN</span><h3>Qué haríamos con esta información</h3></div></div><div class="action-path"><div class="action-item"><span class="action-n">01</span><div><strong>Identificar</strong><p>Localizar relaciones con mayor fricción y comprender qué servicios intercambian.</p></div></div><div class="action-item"><span class="action-n">02</span><div><strong>Contrastar</strong><p>Entrevistar a ambos equipos y revisar tiempos, derivaciones y puntos de bloqueo.</p></div></div><div class="action-item"><span class="action-n">03</span><div><strong>Intervenir</strong><p>Clarificar responsabilidades, acuerdos de servicio y mecanismos de escalamiento.</p></div></div><div class="action-item"><span class="action-n">04</span><div><strong>Verificar</strong><p>Repetir mediciones comparables y comprobar si la experiencia mejora.</p></div></div></div></article></div>
+        </section>
+
+        <section class="section-space method-section" id="metodologia"><div class="section-heading"><div><div class="eyebrow small">04 / CRITERIO METODOLÓGICO</div><h2>Una medición útil exige <span>buenas preguntas.</span></h2><p>El tablero es el resultado visible. La calidad del diagnóstico depende del diseño de los instrumentos y del uso correcto de la evidencia.</p></div></div><div class="method-grid"><div class="method-card"><span class="method-number">01 / DEFINIR</span><div class="method-icon">◇</div><h3>Qué se mide</h3><p>Relacionar cada evaluación con un servicio, una unidad solicitante y una unidad que responde.</p></div><div class="method-card"><span class="method-number">02 / VALIDAR</span><div class="method-icon">◎</div><h3>A quién representa</h3><p>Controlar cobertura, duplicados, no respuesta y denominadores antes de comparar grupos.</p></div><div class="method-card"><span class="method-number">03 / INTERPRETAR</span><div class="method-icon">≋</div><h3>Qué significa</h3><p>Separar la percepción de la explicación y complementar los datos con evidencia cualitativa.</p></div><div class="method-card"><span class="method-number">04 / MEJORAR</span><div class="method-icon">↗</div><h3>Qué cambia</h3><p>Definir responsables, acciones verificables y un momento para volver a medir.</p></div></div><div class="method-outro"><div><span class="mini-eyebrow">PROPUESTA DE TRABAJO</span><p>Un proyecto que deja capacidades instaladas, no solo un informe.</p></div><button class="outline-button dark" id="openGuideBottom">Cómo presentar esta demo <span>↗</span></button></div></section>
+        <footer class="site-footer"><div>ENTRE <span>/</span> Prototipo metodológico para conversación profesional</div><div>Diseño y propuesta · Simón Mendoza <span>© 2026</span></div></footer>
+      </main>
+    </div>
+  </div>
+
+  <div class="dialog-backdrop" id="guideModal" hidden><div class="dialog" role="dialog" aria-modal="true" aria-labelledby="dialogTitle"><button class="close-modal" id="closeGuide" aria-label="Cerrar">×</button><span class="mini-eyebrow">GUION DE EXPOSICIÓN · 90 SEGUNDOS</span><h2 id="dialogTitle">Cómo mostrar el prototipo durante la entrevista</h2><p class="dialog-lead">Este sitio es una demostración conceptual: no contiene datos de la organización.</p><div class="script-list"><div><span>01 · 20 s</span><p>«Este ejemplo muestra cómo pasaría de una encuesta general a un análisis por relaciones entre áreas».</p></div><div><span>02 · 35 s</span><p>«En la matriz identificamos quién solicita servicios, quién los entrega y qué dimensiones generan mayores dificultades. Cada celda se puede examinar».</p></div><div><span>03 · 25 s</span><p>«Luego priorizamos dónde investigar primero, combinando volumen y evaluación. Lo contrastaríamos con entrevistas y registros operativos».</p></div><div><span>04 · 10 s</span><p>«La finalidad es acordar mejoras verificables que puedan seguir monitoreándose».</p></div></div><button id="closeGuideBottom" class="primary-button full">Entendido <span>↗</span></button></div></div>
+</body>
+</html>
