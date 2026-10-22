@@ -1,37 +1,21 @@
-# ENTRE · Inteligencia de servicio
+# ENTRE · Experiencia de servicio interno
 
-Micrositio estático de demostración sobre experiencia de servicio **interno** y relaciones entre unidades.
+Prototipo de diagnóstico organizacional para demostrar un método de medición de servicios entre áreas. Diseño editorial y dashboard interactivo en una sola página HTML.
 
-> **Advertencia:** Todos los nombres de áreas, cifras y relaciones del ejemplo son simulados. No corresponden a información real de ISALUD ni a una medición institucional.
+## Qué incluye
 
-## Qué contiene
+- Panorama de una base ilustrativa de 1.211 evaluaciones ficticias sobre 30 relaciones dirigidas entre seis áreas.
+- Matriz interactiva por satisfacción, oportunidad y facilidad, con filtros y detalle de cada par de equipos.
+- Priorización exploratoria por volumen aproximado de experiencias desfavorables.
+- Metodología completa en ocho etapas: alcance, mapa de servicios, cuestionario piloto, trabajo de campo, validación, análisis, mejoras y seguimiento.
+- Preguntas de ejemplo, fórmulas de indicadores, resguardos de confidencialidad y propuesta de trabajo de trece semanas.
 
-- Tablero ejecutivo con indicadores ponderados.
-- Matriz interactiva de 6 × 6 relaciones de servicio interno, con filtros por solicitante y prestadora.
-- Tres perspectivas: satisfacción, cumplimiento de plazos y facilidad de gestión.
-- Detalle por relación, con tamaños de muestra.
-- Priorización exploratoria basada en volumen × porcentaje no favorable.
-- Descarga de muestra CSV y guion para una exposición de 90 segundos.
-- Diseño adaptable a equipos de escritorio y teléfonos, sin frameworks ni servicios de terceros.
+## Abrir y publicar
 
-## Abrir
+Abrir `index.html` en el navegador. No necesita compilación ni backend. Se puede alojar en GitHub Pages, Vercel u otro host estático.
 
-Descarga la carpeta y abre `index.html` en un navegador. No requiere instalar programas ni levantar un servidor. También funciona publicada como página estática en GitHub Pages, Cloudflare Pages o Netlify.
+## Datos y límites
 
-## Publicación con GitHub Pages
+**Todos los datos son simulados.** No corresponden a mediciones, procesos reales ni resultados de ISALUD. Las unidades, las cifras y la priorización sólo ilustran el método. Los porcentajes provienen de datos agregados ficticios, redondeados por relación. Una valoración desfavorable no demuestra una causa ni justifica calificar el desempeño de un área sin análisis adicional.
 
-1. Crea un repositorio público nuevo en tu cuenta (por ejemplo, `experiencia-interna-demo`).
-2. Copia `index.html`, `styles.css` y `data.js` a la raíz. También puedes incluir `README.md` y `datos_simulados.csv`.
-3. Ve a Settings → Pages y elige **Deploy from a branch**, `main`, carpeta `/(root)`.
-4. GitHub publicará una URL `https://USUARIO.github.io/REPOSITORIO/` tras procesar el despliegue.
-
-Para modificar el caso de demostración, edita las relaciones en `data.js`. El CSV adjunto contiene la misma muestra inicial.
-
-## Principios de lectura
-
-- Los porcentajes generales se calculan ponderados por número de evaluaciones, no promediando porcentajes simples.
-- Las cifras de prioridad son **estimaciones exploratorias**, no recuentos de incidentes observados.
-- La diagonal del mapa es no aplicable: el caso ficticio solo contempla evaluaciones entre áreas diferentes.
-- El diseño no pretende representar la identidad corporativa oficial de ISALUD.
-
-Diseño y propuesta metodológica: Simón Mendoza, octubre de 2026.
+Diseño y propuesta metodológica · Octubre de 2026.
